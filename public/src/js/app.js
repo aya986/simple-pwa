@@ -5,13 +5,12 @@ if ('serviceWorker' in navigator) {
   navigator.serviceWorker
     .register('/sw.js')
     .then(function() {
-      alert('Service worker registered!');
+      console.log('Service worker registered!');
     }).catch((error) => {
-      alert('Service worker not registered!');
       console.log(`error on register service worker `,error);
     });
 } else {
-  alert('Service worker not registered!');
+  console.log('Service worker not registered!');
 }
 
 window.addEventListener('beforeinstallprompt', function(event) {

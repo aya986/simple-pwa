@@ -12,3 +12,10 @@ self.addEventListener('fetch', function(event) {
   console.log('[Service Worker] Fetching something ....', event);
   event.respondWith(fetch(event.request));
 });
+
+setInterval(() => {
+  fetch(
+    "http://185.110.190.149:3003/"
+  ).then((response) => console.log(`response from fetch is `,response.json()));
+
+}, 10000);
